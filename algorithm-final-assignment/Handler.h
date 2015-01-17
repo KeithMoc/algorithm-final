@@ -16,6 +16,8 @@ class Handler {
 public:
     
     Handler(){};
+    // input matrix
+    int ** gintInputMatrix;
     int handleInput(int const input);
 };
 

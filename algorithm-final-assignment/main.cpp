@@ -11,8 +11,7 @@
 
 // store current input option
 int gintOption;
-// input matrix
-int ** gintInputMatrix;
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
