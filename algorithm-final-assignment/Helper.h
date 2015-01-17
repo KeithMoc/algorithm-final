@@ -13,8 +13,18 @@
 
 class Helper {
 public:
-    static void displayDescription();
+    
+    static string const line ;
+    static string const lineAlt;
+    static void printTitle();
+    static void printDescription();
+    static void printError(int const error);
     static void processInput(int const input);
+    static void printLine();
+    static void printMatrix(int** const matrix, int const length);
+    static void printInputNewMatrix();
+    static void printShortLine();
+    static void printAlgorithmList();
 };
 
 #endif /* defined(__algorithm_final_assignment__Helper__) */

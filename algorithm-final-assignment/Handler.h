@@ -18,7 +18,9 @@ public:
     Handler(){};
     // input matrix
     int ** gintInputMatrix;
+    int gintLength;
     int handleInput(int const input);
+    void createInputMatrix(int input);
 };
 
 #endif /* defined(__algorithm_final_assignment__Handler__) */

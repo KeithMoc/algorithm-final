@@ -15,8 +15,22 @@ int gintOption;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    Helper::displayDescription();
     Handler handler;
-    cin >> gintOption;
-    return handler.handleInput(gintOption);
+    bool flag = true;
+    do {
+        if(flag) {
+            Helper::printTitle();
+            Helper::printDescription();
+            cin >> gintOption;
+        }
+        else {
+            Helper::printError(0);
+            Helper::printDescription();
+            cin >> gintOption;
+        }
+        flag = false;
+    } while (gintOption < 1 || gintOption > 4);
+    
+    handler.handleInput(gintOption);
+    Helper::printAlgorithmList();
 }
