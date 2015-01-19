@@ -13,14 +13,16 @@
 
 
 class Handler {
+private:
+    int ** gintInputMatrix;
+    int gintLength;
 public:
     
     Handler(){};
-    // input matrix
-    int ** gintInputMatrix;
-    int gintLength;
-    int handleInput(int const input);
-    void createInputMatrix(int input);
+    void handleAlgorithm(int const input);
+    void handleInput(int const input);
+    void chooseAlgorithm();
+    
 };
 
 #endif /* defined(__algorithm_final_assignment__Handler__) */

@@ -69,6 +69,25 @@ void Helper::printMatrix(int **const matrix, const int length) {
     }
 }
 
+void Helper::printRoute(int **const matrix, int const lenght) {
+    printShortLine();
+    int total = 0;
+    cout << "\tRoute Information :" << endl;
+    cout << "Route:" ;
+    
+    for(int i = 0; i < lenght; i ++) {
+        cout << "\t" << matrix[0][i] << "->";
+    }
+    cout << endl;
+    cout << "Value:";
+    for(int j = 0; j < lenght; j ++) {
+        cout << "\t" << matrix[1][j];
+        total += matrix[1][j];
+    }
+    cout << endl;
+    cout << "Total value:" << total << endl;
+}
+
 void Helper::printInputNewMatrix() {
     printShortLine();
     cout << "____Input a new matrix option____" << endl;

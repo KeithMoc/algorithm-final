@@ -13,11 +13,14 @@
 class Algorithm {
 public:
     // find minimum spanning tree
-    Algorithm(int** _inputMatrix, int _requestCode);
-    int findMST();
-    int runHeuristicAlgo();
-    int runApproximationAlgo();
-    int runBranchAndBoundAlgo();
+     int **gRoute;
+    int currentLenght = 0;
+    int  findMST(int** &srcMatrix, int const lenght);
+    int  runHeuristicAlgo(int** &srcMatrix, int const lenght);
+    int  runApproximationAlgo(int** &srcMatrix, int const lenght);
+    int  runBranchAndBoundAlgo(int** &srcMatrix, int const lenght);
+    int  findMinFromArray(int* &inputArray, int const lenght);
+    bool isSelected(int const src);
 };
 
 #endif /* defined(__algorithm_final_assignment__Algorithm__) */

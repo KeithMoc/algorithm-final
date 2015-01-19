@@ -8,6 +8,7 @@
 
 #include "Helper.h"
 #include "Handler.h"
+#include "Algorithm.h"
 
 // store current input option
 int gintOption;
@@ -30,7 +31,7 @@ int main(int argc, const char * argv[]) {
         }
         flag = false;
     } while (gintOption < 1 || gintOption > 4);
-    
     handler.handleInput(gintOption);
-    Helper::printAlgorithmList();
+    
+    return 0;
 }

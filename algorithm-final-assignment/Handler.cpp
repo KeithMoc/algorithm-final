@@ -8,28 +8,9 @@
 
 #include "Handler.h"
 #include "Helper.h"
+#include "Algorithm.h"
 
-int Handler::handleInput(const int input) {
-    switch (input) {
-        case 1:
-            createInputMatrix(1);
-            break;
-        case 2:
-            createInputMatrix(2);
-            break;
-        case 3:
-            createInputMatrix(3);
-            break;
-        case 4:
-            exit(0);
-            break;
-        default:
-            break;
-    }
-    return 0;
-}
-
-void Handler::createInputMatrix(int input) {
+void Handler::handleInput(int input) {
     switch (input) {
         case 1: {
             int tempMatrix[5][5] = {
@@ -86,5 +67,57 @@ void Handler::createInputMatrix(int input) {
         default:
             break;
     }
-    Helper::printMatrix(gintInputMatrix, gintLength);
+    //Helper::printMatrix(gintInputMatrix, gintLength);
+    chooseAlgorithm();
+}
+
+void Handler::chooseAlgorithm() {
+    bool flag = true;
+    int option;
+    do {
+        if(flag) {
+            Helper::printAlgorithmList();
+            cin >> option;
+        }
+        else {
+            Helper::printError(0);
+            cin >> option;
+        }
+        flag = false;
+    } while(option < 1 || option > 9);
+    handleAlgorithm(option);
+}
+
+void Handler::handleAlgorithm(const int input) {
+    Algorithm algo;
+    switch (input) {
+        case 1:
+            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            break;
+        case 2:
+            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            
+            break;
+        case 6:
+            
+            break;
+        case 7:
+            
+            break;
+        case 8:
+            break;
+        case 9:
+            exit(0);
+            break;
+        default:
+            break;
+    }
 }

@@ -25,6 +25,7 @@ public:
     static void printInputNewMatrix();
     static void printShortLine();
     static void printAlgorithmList();
+    static void printRoute(int** const matrix, int const lenght);
 };
 
 #endif /* defined(__algorithm_final_assignment__Helper__) */
