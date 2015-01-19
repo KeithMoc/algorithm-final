@@ -21,7 +21,6 @@ int Algorithm::runHeuristicAlgo(int** &srcMatrix, const int length) {
     }
     
     Helper::printMatrix(inputMatrix, length);
-    cout << "Lenght:" << length << endl;
     gRoute = new int*[2];
     int src,dst;
     // receive position
@@ -39,7 +38,6 @@ int Algorithm::runHeuristicAlgo(int** &srcMatrix, const int length) {
             currentLenght++;
             break;
         }
-        cout << "source:" << src << endl;
         dst = findMinFromArray(inputMatrix[src], length);
         gRoute[0][i+1]=dst;
         gRoute[1][i+1]=inputMatrix[src][dst];
@@ -50,10 +48,7 @@ int Algorithm::runHeuristicAlgo(int** &srcMatrix, const int length) {
             inputMatrix[j][dst] = 0;
         }
         src = dst;
-        cout << "destination:" << dst << endl;
         Helper::printMatrix(inputMatrix, length);
-        Helper::printRoute(gRoute, currentLenght);
-        
     }
     Helper::printRoute(gRoute, length+1);
     return 0;
@@ -73,7 +68,6 @@ int Algorithm::findMinFromArray(int* &inputArray, const int lenght) {
                 tempMin = i;
             else if (inputArray[i] < inputArray[tempMin])
                 tempMin = i;
-            cout << "tempMin:" << tempMin;
         }
     }
     return tempMin;
@@ -85,7 +79,6 @@ int Algorithm::findMinFromArray(int* &inputArray, const int lenght) {
 bool Algorithm::isSelected(const int src) {
     for(int i = 0; i < currentLenght ; i++) {
         if(gRoute[0][i] == src) {
-            cout << "check" << gRoute[0][i] << endl;
             return true;
         }
     }

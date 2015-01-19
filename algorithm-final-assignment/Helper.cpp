@@ -73,12 +73,16 @@ void Helper::printRoute(int **const matrix, int const lenght) {
     printShortLine();
     int total = 0;
     cout << "\tRoute Information :" << endl;
-    cout << "Route:" ;
     
-    for(int i = 0; i < lenght; i ++) {
+    // print routes
+    cout << "Route:" ;
+    for(int i = 0; i < lenght-1; i ++) {
         cout << "\t" << matrix[0][i] << "->";
     }
+    cout << "\t" << matrix[0][lenght-1];
     cout << endl;
+    
+    // print values
     cout << "Value:";
     for(int j = 0; j < lenght; j ++) {
         cout << "\t" << matrix[1][j];
