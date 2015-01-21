@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
             cin >> gintOption;
         }
         flag = false;
-    } while (gintOption < 1 || gintOption > 4);
+    } while (gintOption < 1 || gintOption > 5);
     handler.handleInput(gintOption);
     
     return 0;

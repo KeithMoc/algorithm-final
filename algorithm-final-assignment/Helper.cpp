@@ -34,8 +34,9 @@ void Helper::printDescription() {
     cout << "Please choose your options:" << endl;
     cout << "\t1: Use default matrix 1." << endl;
     cout << "\t2: Use default matrix 2." << endl;
-    cout << "\t3: Input a new matrix." << endl;
-    cout << "\t4: Exit the program." << endl;
+    cout << "\t3: Use default matrix 3." << endl;
+    cout << "\t4: Input a new matrix." << endl;
+    cout << "\t5: Exit the program." << endl;
     cout << "Your option is [1/2/3/4]:";
 }
 
@@ -44,14 +45,13 @@ void Helper::printAlgorithmList() {
     cout << "Please select the algorithms you want to execute:" << endl;
     cout << "\t1. Heuristic Algo." << endl;
     cout << "\t2. Approximation Algo." << endl;
-    cout << "\t3. Branch and Bound." << endl;
+    //cout << "\t3. Branch and Bound." << endl;
     cout << "\t4. Heuristic and Approximation." << endl;
-    cout << "\t5. Heuristic and Branch&Bound." << endl;
-    cout << "\t6. Approximation and Branch&Bound." << endl;
-    cout << "\t7. Heuristic and Approximation and Branch&Bound." << endl;
-    cout << "\t8. Back to previous step." << endl;
-    cout << "\t9. Exit the application." << endl;
-    printShortLine();
+    //cout << "\t5. Heuristic and Branch&Bound." << endl;
+    //cout << "\t6. Approximation and Branch&Bound." << endl;
+    //cout << "\t7. Heuristic and Approximation and Branch&Bound." << endl;
+    cout << "\t8. Exit The Application" << endl;
+        printShortLine();
     cout << "Please choose your option:";
 }
 

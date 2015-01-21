@@ -50,6 +50,24 @@ void Handler::handleInput(int input) {
         }
         case 3:
         {
+            int tempMatrix[5][5] = {
+                {0,14,4,10,20},
+                {14,0,7,8,7},
+                {4,5,0,7,16},
+                {11,7,9,0,2},
+                {18,7,17,4,0}
+            };
+            gintLength = 5;
+            // initialize rows
+            gintInputMatrix = new int* [gintLength];
+            for(int i = 0; i < gintLength; i++){
+                // assign value to each rows
+                gintInputMatrix[i] = tempMatrix[i];
+            }
+            break;
+        }
+        case 4:
+        {
             Helper::printInputNewMatrix();
             cin >> gintLength;
             // initialize rows
@@ -64,6 +82,9 @@ void Handler::handleInput(int input) {
             }
             break;
         }
+        case 5:
+            exit(EXIT_SUCCESS);
+            break;
         default:
             break;
     }
@@ -84,7 +105,7 @@ void Handler::chooseAlgorithm() {
             cin >> option;
         }
         flag = false;
-    } while(option < 1 || option > 9);
+    } while(option < 1 || option > 8);
     handleAlgorithm(option);
 }
 
@@ -110,8 +131,16 @@ void Handler::handleAlgorithm(const int input) {
             break;
         }
         case 3:
-            
+        {
+            /*
+            auto start = chrono::steady_clock::now();
+            algo.runBranchAndBoundAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Branch and bound Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
+             */
+        }
         case 4: {
             auto start = chrono::steady_clock::now();
             algo.runHeuristicAlgo(gintInputMatrix, gintLength);
@@ -126,18 +155,65 @@ void Handler::handleAlgorithm(const int input) {
             cout << "Approximation Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
         }
-        case 5:
+        case 5: {
+            auto start = chrono::steady_clock::now();
+            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Heuristic Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             
+            /*
+            start = chrono::steady_clock::now();
+            algo.runBranchAndBoundAlgo(gintInputMatrix, gintLength);
+            end = chrono::steady_clock::now();
+            diff = end - start;
+            cout << "Branch and bound Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
-        case 6:
+            */
+        }
+        case 6:{
             
-            break;
+            auto start = chrono::steady_clock::now();
+            algo.runApproximationAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Approximation Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
+            /*
+            start = chrono::steady_clock::now();
+            algo.runBranchAndBoundAlgo(gintInputMatrix, gintLength);
+            end = chrono::steady_clock::now();
+            diff = end - start;
+            cout << "Branch and bound Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
+             */
+        }
         case 7:
+        {
             
+            auto start = chrono::steady_clock::now();
+            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Heuristic Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
+            
+            
+            start = chrono::steady_clock::now();
+            algo.runApproximationAlgo(gintInputMatrix, gintLength);
+            end = chrono::steady_clock::now();
+            diff = end - start;
+            cout << "Approximation Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
+                        
+          
+            /*
+            start = chrono::steady_clock::now();
+            algo.runBranchAndBoundAlgo(gintInputMatrix, gintLength);
+            end = chrono::steady_clock::now();
+            diff = end - start;
+            cout << "Branch and bound Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
+             */
             break;
+            
+        }
         case 8:
-            break;
-        case 9:
             exit(0);
             break;
         default:

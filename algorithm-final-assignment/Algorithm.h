@@ -26,9 +26,18 @@ public:
     int  findMinWeigthVertice(int* weigth, bool* mstSet);
     bool isSelected(int* vertices, int const vertex, int const length);
     
-    int  runBranchAndBoundAlgo(int** &srcMatrix, int const length);
-    
-    
+    /*
+    struct node {
+        int level;
+        set<int> path;
+        int bound;
+    };
+
+    int runBranchAndBoundAlgo(int** &srcMatrix, int const length);
+    int findBound(node v, int** srcMatrix);
+    int findMinWeigthVertice(int* weigth, node v, int vertex);
+    int findLength(set<int> path, int** matrix);
+    */
     //getter and setter
     void setMatrixLength(int const length) {
         this->gintLength = length;
