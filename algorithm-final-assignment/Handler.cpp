@@ -90,19 +90,42 @@ void Handler::chooseAlgorithm() {
 
 void Handler::handleAlgorithm(const int input) {
     Algorithm algo;
+    algo.setMatrixLength(gintLength);
     switch (input) {
-        case 1:
+        case 1: {
+            auto start = chrono::steady_clock::now();
             algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Heuristic Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
+        }
         case 2:
-            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+        {
+            auto start = chrono::steady_clock::now();
+            algo.runApproximationAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Approximation Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
+        }
         case 3:
             
             break;
-        case 4:
+        case 4: {
+            auto start = chrono::steady_clock::now();
+            algo.runHeuristicAlgo(gintInputMatrix, gintLength);
+            auto end = chrono::steady_clock::now();
+            auto diff = end - start;
+            cout << "Heuristic Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             
+            start = chrono::steady_clock::now();
+            algo.runApproximationAlgo(gintInputMatrix, gintLength);
+            end = chrono::steady_clock::now();
+            diff = end - start;
+            cout << "Approximation Running Time:" << chrono::duration<double,nano> (diff).count() << " (ns)" << endl;
             break;
+        }
         case 5:
             
             break;

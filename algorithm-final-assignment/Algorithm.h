@@ -11,16 +11,29 @@
 
 #include "main.h"
 class Algorithm {
+private:
+    int **gRoute;
+    int  currentLenght = 0;
+    int gintLength;
 public:
+    
     // find minimum spanning tree
-     int **gRoute;
-    int currentLenght = 0;
-    int  findMST(int** &srcMatrix, int const lenght);
-    int  runHeuristicAlgo(int** &srcMatrix, int const lenght);
-    int  runApproximationAlgo(int** &srcMatrix, int const lenght);
-    int  runBranchAndBoundAlgo(int** &srcMatrix, int const lenght);
-    int  findMinFromArray(int* &inputArray, int const lenght);
-    bool isSelected(int const src);
+    
+    int  runHeuristicAlgo(int** &srcMatrix, int const length);
+    int  findMinFromArray(int* inputArray,bool* selected, int const length);
+    
+    int  runApproximationAlgo(int** &srcMatrix, int const length);
+    int  findMinWeigthVertice(int* weigth, bool* mstSet);
+    bool isSelected(int* vertices, int const vertex, int const length);
+    
+    int  runBranchAndBoundAlgo(int** &srcMatrix, int const length);
+    
+    
+    //getter and setter
+    void setMatrixLength(int const length) {
+        this->gintLength = length;
+    };
+    
 };
 
 #endif /* defined(__algorithm_final_assignment__Algorithm__) */

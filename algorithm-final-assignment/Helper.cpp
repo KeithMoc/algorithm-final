@@ -27,7 +27,6 @@ void Helper::printTitle() {
     cout << line << endl;
 }
 
-
 /*!
  * @brief display program description when it is started
  */
@@ -108,4 +107,12 @@ void Helper::printError(const int error) {
         default:
             break;
     }
+}
+
+// get time in milliseconds
+long Helper::getSystemTime() {
+    timeval time;
+    gettimeofday(&time, NULL);
+    long currentTime = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+    return currentTime;
 }

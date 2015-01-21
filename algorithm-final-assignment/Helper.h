@@ -26,6 +26,7 @@ public:
     static void printShortLine();
     static void printAlgorithmList();
     static void printRoute(int** const matrix, int const lenght);
+    static long getSystemTime();// in miliseconds
 };
 
 #endif /* defined(__algorithm_final_assignment__Helper__) */
